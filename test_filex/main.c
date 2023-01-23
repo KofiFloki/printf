@@ -3,8 +3,14 @@
 
 int main(void)
 {
-	printf("My name is %s and my grade is %c %%\n", "John", 'A');
-	_printf("My name is %s and my grade is %c %%\n", "John", 'A');
+	int len;
+	int len2;
 
+	_printf("Character:[%c]\n", 'H');
+	    printf("Character:[%c]\n", 'H');
+	        _printf("String:[%s]\n", "I am a string !");
+		    printf("String:[%s]\n", "I am a string !");
+		    len = _printf("Percent:[%%]\n");
+		        len2 = printf("Percent:[%%]\n");
 	return (0);
 }
