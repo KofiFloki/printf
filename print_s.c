@@ -12,7 +12,7 @@ char *print_s(va_list list)
 	char *s;
 	int lenght;
 
-	s = va_arg(list char *);
+	s = va_arg(list, char *);
 
 	if (s == NULL)
 		s = "(null)";

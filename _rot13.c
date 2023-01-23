@@ -29,9 +29,9 @@ char *rot13(va_list list)
 		}
 		else
 			(new_s[a] = s[a]);
-			i++;
+		a++;
 	}
-	nstr[i] = '\0';
+	new_s[a] = '\0';
 
 	return (new_s);
 }
