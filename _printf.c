@@ -20,8 +20,10 @@ int _printf(const char *format, ...)
 	while (format[a] != '\0')
 	{
 		if (format[a] != '%')
+		{
 			_putchar(format[a]);
 			n_chars++;
+		}
 		else
 		{
 			if (format[a + 1] == 'c')
