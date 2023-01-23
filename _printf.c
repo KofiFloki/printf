@@ -1,7 +1,11 @@
 #include "main.h"
 #include <stdarg.h>
 #include <stddef.h>
-
+/**
+ * _printf - A function that works like printf for c, s and %
+ * @format: the format specifier
+ * Return: Success (0)
+ */
 int _printf(const char *format, ...)
 {
 	char *str = NULL;
