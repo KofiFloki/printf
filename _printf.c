@@ -65,8 +65,10 @@ int _printf(const char *format, ...)
 				if (f == NULL)
 				{
 					len = check_buffer_overflow(buffer, len);
-					buffer[len++] = '%'; total_len++;
-					buffer[len++] = format[i]; total_len++;
+					buffer[len++] = '%';
+					total_len++;
+					buffer[len++] = format[i];
+					total_len++;
 				}
 				else
 				{
@@ -88,7 +90,8 @@ int _printf(const char *format, ...)
 					{
 						len = check_buffer_overflow(buffer, len);
 						buffer[len++] = str[j];
-						total_len++; j++;
+						total_len++;
+						j++;
 					}
 					free(str);
 				}
@@ -99,3 +102,4 @@ int _printf(const char *format, ...)
 	write_buffer(buffer, len, list);
 	return (total_len);
 }
+
