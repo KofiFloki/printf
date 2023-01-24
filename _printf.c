@@ -35,27 +35,25 @@ int _printf(const char *format, ...)
 	buffer = create_buffer();
 	if (buffer == NULL)
 		return (-1);
-
 	va_start(list, format);
-
 	while (format[i] != '\0')
 	{
-		if (format[i] != '%') /* copy format into buffer until '%' */
+		if (format[i] != '%')
 		{
 			len = check_buffer_overflow(buffer, len);
 			buffer[len++] = format[i++];
 			total_len++;
 		}
-		else /* if %, find function */
+		else
 		{
 			i++;
-			if (format[i] == '\0') /* handle single ending % */
+			if (format[i] == '\0')
 			{
 				va_end(list);
 				free(buffer);
 				return (-1);
 			}
-			if (format[i] == '%') /* handle double %'s */
+			if (format[i] == '%')
 			{
 				len = check_buffer_overflow(buffer, len);
 				buffer[len++] = format[i];
@@ -63,14 +61,14 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				f = get_func(format[i]); /* grab function */
-				if (f == NULL)  /* handle fake id */
+				f = get_func(format[i]);
+				if (f == NULL)
 				{
 					len = check_buffer_overflow(buffer, len);
 					buffer[len++] = '%'; total_len++;
 					buffer[len++] = format[i]; total_len++;
 				}
-				else /* return string, copy to buffer */
+				else
 				{
 					str = f(list);
 					if (str == NULL)
@@ -94,7 +92,8 @@ int _printf(const char *format, ...)
 					}
 					free(str);
 				}
-			} i++;
+			}
+			i++;
 		}
 	}
 	write_buffer(buffer, len, list);
