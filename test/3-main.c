@@ -1,4 +1,4 @@
-#include "../main.h"
+#include "../holberton.h"
 
 /**
  * Command to run test:
